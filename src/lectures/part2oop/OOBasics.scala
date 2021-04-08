@@ -43,6 +43,4 @@ class Person(name: String, val age: Int = 0){
   def this(name: String) = this(name, 0) // notice how this calls the primary constructor
   def this() = this("John Doe") // this calls the auxiliary constructor above, which in turn calls the primary constructor
 
-
-
 }
