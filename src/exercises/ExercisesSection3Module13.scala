@@ -9,6 +9,10 @@ object ExercisesSection3Module13 extends App {
       new Person(name = s"$name ($nickname)", age, favoriteMovie)
     }
 
+    def +(person: Person): String = {
+      s"${name} is hanging out with ${person.name}"
+    }
+
     def unary_+ : Person = {
       new Person(name, age+1, favoriteMovie)
     }
@@ -18,7 +22,9 @@ object ExercisesSection3Module13 extends App {
     }
 
     def learnsScala: String = {
-      learns(subject = "Scala")
+      //learns(subject = "Scala")
+      // could also write:
+      this learns "Scala"
     }
 
     def apply(): String = {
@@ -49,7 +55,7 @@ object ExercisesSection3Module13 extends App {
   */
   val olderMary = +mary
   println(s"Hi, I'm the older ${olderMary.name} and I'm ${olderMary.age}")
-
+  println((+mary).age) // returns Mary's age + 1
 
   /*
   3. Add a "learns" method in the Person class => Mary learns Scala
