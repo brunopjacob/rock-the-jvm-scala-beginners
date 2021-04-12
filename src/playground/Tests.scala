@@ -1,12 +1,15 @@
 package playground
 
-import scala.annotation.tailrec
-
 object Tests extends App {
 
-  val num = 3
+  abstract class AbstractList[+T]
 
-  var aList: List[Int] = List(1,3,4,5)
-  println(aList.map(x => List.fill(num)(x)).flatten)
+  class MyList[T](val head: T, val tail: AbstractList[T]) extends AbstractList[T]
+
+  object EmptyList extends AbstractList[Nothing] // (singleton) instance of itself!
+
+  val list =  new MyList( head = 3, tail = EmptyList)
+
+  println(list.head)
 
 }
