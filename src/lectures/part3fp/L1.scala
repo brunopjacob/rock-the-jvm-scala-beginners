@@ -1,6 +1,6 @@
 package lectures.part3fp
 
-object l1 extends App {
+object L1 extends App {
 
   // A function that takes 2 strings and concatenate them
   def stringConcatenator: (String, String) => String =
